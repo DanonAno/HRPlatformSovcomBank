@@ -6,14 +6,19 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
+    
+    let workView = WorkExperienceView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.addSubview(workView)
+        workView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        workView.bindData()
     }
-
-
 }
 

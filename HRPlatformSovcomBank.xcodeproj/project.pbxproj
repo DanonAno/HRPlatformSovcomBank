@@ -7,15 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2185062C8190F9F9003C205C /* Pods_HRPlatformSovcomBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED268635E084D4FB14D9495 /* Pods_HRPlatformSovcomBank.framework */; };
 		A5F2F6502A1D1756001A2623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */; };
 		A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */; };
 		A5F2F6542A1D1756001A2623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6532A1D1756001A2623 /* ViewController.swift */; };
 		A5F2F6572A1D1756001A2623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F6552A1D1756001A2623 /* Main.storyboard */; };
 		A5F2F6592A1D1758001A2623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F6582A1D1758001A2623 /* Assets.xcassets */; };
 		A5F2F65C2A1D1758001A2623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F65A2A1D1758001A2623 /* LaunchScreen.storyboard */; };
+		A5F2F6652A1D4BB9001A2623 /* WorkExperience.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6642A1D4BB9001A2623 /* WorkExperience.swift */; };
+		A5F2F66A2A1D4DBC001A2623 /* WorkExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6692A1D4DBC001A2623 /* WorkExperienceView.swift */; };
+		A5F2F66C2A1D4DEF001A2623 /* WorkExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F66B2A1D4DEF001A2623 /* WorkExperienceCell.swift */; };
+		A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ED268635E084D4FB14D9495 /* Pods_HRPlatformSovcomBank.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HRPlatformSovcomBank.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F2F64C2A1D1756001A2623 /* HRPlatformSovcomBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRPlatformSovcomBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +30,12 @@
 		A5F2F6582A1D1758001A2623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F2F65B2A1D1758001A2623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A5F2F65D2A1D1758001A2623 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F2F6642A1D4BB9001A2623 /* WorkExperience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperience.swift; sourceTree = "<group>"; };
+		A5F2F6692A1D4DBC001A2623 /* WorkExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceView.swift; sourceTree = "<group>"; };
+		A5F2F66B2A1D4DEF001A2623 /* WorkExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceCell.swift; sourceTree = "<group>"; };
+		A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceSectionModel.swift; sourceTree = "<group>"; };
+		D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.debug.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.debug.xcconfig"; sourceTree = "<group>"; };
+		DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.release.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2185062C8190F9F9003C205C /* Pods_HRPlatformSovcomBank.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11DDBFA77418F97ACD5EE6F8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */,
+				DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		99974F522E20FE5E1EE56093 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7ED268635E084D4FB14D9495 /* Pods_HRPlatformSovcomBank.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A5F2F6432A1D1756001A2623 = {
 			isa = PBXGroup;
 			children = (
 				A5F2F64E2A1D1756001A2623 /* HRPlatformSovcomBank */,
 				A5F2F64D2A1D1756001A2623 /* Products */,
+				11DDBFA77418F97ACD5EE6F8 /* Pods */,
+				99974F522E20FE5E1EE56093 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +88,51 @@
 		A5F2F64E2A1D1756001A2623 /* HRPlatformSovcomBank */ = {
 			isa = PBXGroup;
 			children = (
-				A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */,
-				A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */,
+				A5F2F6632A1D4B8E001A2623 /* Application */,
 				A5F2F6532A1D1756001A2623 /* ViewController.swift */,
+				A5F2F6672A1D4D88001A2623 /* Views */,
+				A5F2F6662A1D4BC2001A2623 /* Models */,
 				A5F2F6552A1D1756001A2623 /* Main.storyboard */,
 				A5F2F6582A1D1758001A2623 /* Assets.xcassets */,
 				A5F2F65A2A1D1758001A2623 /* LaunchScreen.storyboard */,
 				A5F2F65D2A1D1758001A2623 /* Info.plist */,
 			);
 			path = HRPlatformSovcomBank;
+			sourceTree = "<group>";
+		};
+		A5F2F6632A1D4B8E001A2623 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */,
+				A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A5F2F6662A1D4BC2001A2623 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A5F2F6672A1D4D88001A2623 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6682A1D4D97001A2623 /* WorkExperience */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5F2F6682A1D4D97001A2623 /* WorkExperience */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6642A1D4BB9001A2623 /* WorkExperience.swift */,
+				A5F2F6692A1D4DBC001A2623 /* WorkExperienceView.swift */,
+				A5F2F66B2A1D4DEF001A2623 /* WorkExperienceCell.swift */,
+				A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */,
+			);
+			path = WorkExperience;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A5F2F6602A1D1758001A2623 /* Build configuration list for PBXNativeTarget "HRPlatformSovcomBank" */;
 			buildPhases = (
+				E08B6EB54D9C727C848B22DF /* [CP] Check Pods Manifest.lock */,
 				A5F2F6482A1D1756001A2623 /* Sources */,
 				A5F2F6492A1D1756001A2623 /* Frameworks */,
 				A5F2F64A2A1D1756001A2623 /* Resources */,
+				4521BD670020672F6954B533 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +203,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4521BD670020672F6954B533 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E08B6EB54D9C727C848B22DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HRPlatformSovcomBank-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A5F2F6482A1D1756001A2623 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,6 +252,10 @@
 			files = (
 				A5F2F6542A1D1756001A2623 /* ViewController.swift in Sources */,
 				A5F2F6502A1D1756001A2623 /* AppDelegate.swift in Sources */,
+				A5F2F66C2A1D4DEF001A2623 /* WorkExperienceCell.swift in Sources */,
+				A5F2F66A2A1D4DBC001A2623 /* WorkExperienceView.swift in Sources */,
+				A5F2F6652A1D4BB9001A2623 /* WorkExperience.swift in Sources */,
+				A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */,
 				A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,6 +398,7 @@
 		};
 		A5F2F6612A1D1758001A2623 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,14 +419,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shift.HRPlatformSovcomBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A5F2F6622A1D1758001A2623 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -330,9 +451,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shift.HRPlatformSovcomBank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

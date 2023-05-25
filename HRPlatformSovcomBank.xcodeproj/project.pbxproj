@@ -10,7 +10,7 @@
 		2185062C8190F9F9003C205C /* Pods_HRPlatformSovcomBank.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ED268635E084D4FB14D9495 /* Pods_HRPlatformSovcomBank.framework */; };
 		A5F2F6502A1D1756001A2623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */; };
 		A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */; };
-		A5F2F6542A1D1756001A2623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6532A1D1756001A2623 /* ViewController.swift */; };
+		A5F2F6542A1D1756001A2623 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6532A1D1756001A2623 /* LoginViewController.swift */; };
 		A5F2F6572A1D1756001A2623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F6552A1D1756001A2623 /* Main.storyboard */; };
 		A5F2F6592A1D1758001A2623 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F6582A1D1758001A2623 /* Assets.xcassets */; };
 		A5F2F65C2A1D1758001A2623 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5F2F65A2A1D1758001A2623 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,8 @@
 		A5F2F66A2A1D4DBC001A2623 /* WorkExperienceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6692A1D4DBC001A2623 /* WorkExperienceView.swift */; };
 		A5F2F66C2A1D4DEF001A2623 /* WorkExperienceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F66B2A1D4DEF001A2623 /* WorkExperienceCell.swift */; };
 		A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */; };
+		A5F2F6712A1E78E1001A2623 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6702A1E78E0001A2623 /* Colors.swift */; };
+		A5F2F6732A1F9C96001A2623 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +27,7 @@
 		A5F2F64C2A1D1756001A2623 /* HRPlatformSovcomBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HRPlatformSovcomBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5F2F64F2A1D1756001A2623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5F2F6512A1D1756001A2623 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A5F2F6532A1D1756001A2623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A5F2F6532A1D1756001A2623 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A5F2F6562A1D1756001A2623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A5F2F6582A1D1758001A2623 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5F2F65B2A1D1758001A2623 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +36,8 @@
 		A5F2F6692A1D4DBC001A2623 /* WorkExperienceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceView.swift; sourceTree = "<group>"; };
 		A5F2F66B2A1D4DEF001A2623 /* WorkExperienceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceCell.swift; sourceTree = "<group>"; };
 		A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceSectionModel.swift; sourceTree = "<group>"; };
+		A5F2F6702A1E78E0001A2623 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.debug.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.debug.xcconfig"; sourceTree = "<group>"; };
 		DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.release.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,7 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				A5F2F6632A1D4B8E001A2623 /* Application */,
-				A5F2F6532A1D1756001A2623 /* ViewController.swift */,
+				A5F2F6742A1F9C9B001A2623 /* LoginVC */,
+				A5F2F66F2A1E78D5001A2623 /* Colors */,
 				A5F2F6672A1D4D88001A2623 /* Views */,
 				A5F2F6662A1D4BC2001A2623 /* Models */,
 				A5F2F6552A1D1756001A2623 /* Main.storyboard */,
@@ -133,6 +138,23 @@
 				A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */,
 			);
 			path = WorkExperience;
+			sourceTree = "<group>";
+		};
+		A5F2F66F2A1E78D5001A2623 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6702A1E78E0001A2623 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		A5F2F6742A1F9C9B001A2623 /* LoginVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6532A1D1756001A2623 /* LoginViewController.swift */,
+				A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */,
+			);
+			path = LoginVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,13 +272,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5F2F6542A1D1756001A2623 /* ViewController.swift in Sources */,
+				A5F2F6542A1D1756001A2623 /* LoginViewController.swift in Sources */,
+				A5F2F6712A1E78E1001A2623 /* Colors.swift in Sources */,
 				A5F2F6502A1D1756001A2623 /* AppDelegate.swift in Sources */,
 				A5F2F66C2A1D4DEF001A2623 /* WorkExperienceCell.swift in Sources */,
 				A5F2F66A2A1D4DBC001A2623 /* WorkExperienceView.swift in Sources */,
 				A5F2F6652A1D4BB9001A2623 /* WorkExperience.swift in Sources */,
 				A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */,
 				A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */,
+				A5F2F6732A1F9C96001A2623 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

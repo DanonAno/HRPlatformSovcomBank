@@ -245,6 +245,10 @@ class ViewController: UIViewController {
         }
     }
     
+    private func setupBindings() {
+        
+    }
+    
     
 }
 

@@ -20,6 +20,14 @@
 		A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */; };
 		A5F2F6712A1E78E1001A2623 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6702A1E78E0001A2623 /* Colors.swift */; };
 		A5F2F6732A1F9C96001A2623 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */; };
+		A5F2F6782A1F9DBC001A2623 /* VacancyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6772A1F9DBC001A2623 /* VacancyViewController.swift */; };
+		A5F2F67A2A1F9DC8001A2623 /* VacancyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6792A1F9DC8001A2623 /* VacancyViewModel.swift */; };
+		A5F2F67C2A1F9DD7001A2623 /* VacancyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F67B2A1F9DD6001A2623 /* VacancyCell.swift */; };
+		A5F2F67E2A1F9DDF001A2623 /* VacancyCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F67D2A1F9DDF001A2623 /* VacancyCellViewModel.swift */; };
+		A5F2F6802A200501001A2623 /* VacancyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F67F2A200501001A2623 /* VacancyModel.swift */; };
+		A5F2F6832A2096F1001A2623 /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6822A2096F1001A2623 /* ViewModelProtocol.swift */; };
+		A5F2F6862A210D1F001A2623 /* LoginNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6852A210D1F001A2623 /* LoginNavigation.swift */; };
+		A5F2F6882A212A14001A2623 /* VacancyTagModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6872A212A14001A2623 /* VacancyTagModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		A5F2F66D2A1D4E27001A2623 /* WorkExperienceSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkExperienceSectionModel.swift; sourceTree = "<group>"; };
 		A5F2F6702A1E78E0001A2623 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A5F2F6772A1F9DBC001A2623 /* VacancyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewController.swift; sourceTree = "<group>"; };
+		A5F2F6792A1F9DC8001A2623 /* VacancyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyViewModel.swift; sourceTree = "<group>"; };
+		A5F2F67B2A1F9DD6001A2623 /* VacancyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCell.swift; sourceTree = "<group>"; };
+		A5F2F67D2A1F9DDF001A2623 /* VacancyCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyCellViewModel.swift; sourceTree = "<group>"; };
+		A5F2F67F2A200501001A2623 /* VacancyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyModel.swift; sourceTree = "<group>"; };
+		A5F2F6822A2096F1001A2623 /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
+		A5F2F6852A210D1F001A2623 /* LoginNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginNavigation.swift; sourceTree = "<group>"; };
+		A5F2F6872A212A14001A2623 /* VacancyTagModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyTagModel.swift; sourceTree = "<group>"; };
 		D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.debug.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.debug.xcconfig"; sourceTree = "<group>"; };
 		DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.release.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,10 +109,12 @@
 			isa = PBXGroup;
 			children = (
 				A5F2F6632A1D4B8E001A2623 /* Application */,
-				A5F2F6742A1F9C9B001A2623 /* LoginVC */,
+				A5F2F6752A1F9CEC001A2623 /* Controllers */,
+				A5F2F6842A210CDD001A2623 /* Navigation */,
 				A5F2F66F2A1E78D5001A2623 /* Colors */,
 				A5F2F6672A1D4D88001A2623 /* Views */,
 				A5F2F6662A1D4BC2001A2623 /* Models */,
+				A5F2F6812A209622001A2623 /* Protocols */,
 				A5F2F6552A1D1756001A2623 /* Main.storyboard */,
 				A5F2F6582A1D1758001A2623 /* Assets.xcassets */,
 				A5F2F65A2A1D1758001A2623 /* LaunchScreen.storyboard */,
@@ -117,6 +135,7 @@
 		A5F2F6662A1D4BC2001A2623 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A5F2F6872A212A14001A2623 /* VacancyTagModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +174,43 @@
 				A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */,
 			);
 			path = LoginVC;
+			sourceTree = "<group>";
+		};
+		A5F2F6752A1F9CEC001A2623 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6762A1F9D98001A2623 /* VacancyVC */,
+				A5F2F6742A1F9C9B001A2623 /* LoginVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A5F2F6762A1F9D98001A2623 /* VacancyVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6772A1F9DBC001A2623 /* VacancyViewController.swift */,
+				A5F2F6792A1F9DC8001A2623 /* VacancyViewModel.swift */,
+				A5F2F67B2A1F9DD6001A2623 /* VacancyCell.swift */,
+				A5F2F67D2A1F9DDF001A2623 /* VacancyCellViewModel.swift */,
+				A5F2F67F2A200501001A2623 /* VacancyModel.swift */,
+			);
+			path = VacancyVC;
+			sourceTree = "<group>";
+		};
+		A5F2F6812A209622001A2623 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6822A2096F1001A2623 /* ViewModelProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		A5F2F6842A210CDD001A2623 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6852A210D1F001A2623 /* LoginNavigation.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,13 +329,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5F2F6542A1D1756001A2623 /* LoginViewController.swift in Sources */,
+				A5F2F67C2A1F9DD7001A2623 /* VacancyCell.swift in Sources */,
 				A5F2F6712A1E78E1001A2623 /* Colors.swift in Sources */,
+				A5F2F6862A210D1F001A2623 /* LoginNavigation.swift in Sources */,
+				A5F2F67A2A1F9DC8001A2623 /* VacancyViewModel.swift in Sources */,
+				A5F2F67E2A1F9DDF001A2623 /* VacancyCellViewModel.swift in Sources */,
 				A5F2F6502A1D1756001A2623 /* AppDelegate.swift in Sources */,
 				A5F2F66C2A1D4DEF001A2623 /* WorkExperienceCell.swift in Sources */,
 				A5F2F66A2A1D4DBC001A2623 /* WorkExperienceView.swift in Sources */,
 				A5F2F6652A1D4BB9001A2623 /* WorkExperience.swift in Sources */,
+				A5F2F6802A200501001A2623 /* VacancyModel.swift in Sources */,
+				A5F2F6882A212A14001A2623 /* VacancyTagModel.swift in Sources */,
 				A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */,
+				A5F2F6832A2096F1001A2623 /* ViewModelProtocol.swift in Sources */,
 				A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */,
+				A5F2F6782A1F9DBC001A2623 /* VacancyViewController.swift in Sources */,
 				A5F2F6732A1F9C96001A2623 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

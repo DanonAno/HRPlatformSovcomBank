@@ -169,7 +169,11 @@ class ViewController: UIViewController {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
         // Add your code to handle checkbox state change here
     }
-
+    
+    //MARK: Dependencies
+    
+    private let disposeBag = DisposeBag()
+    var viewModel: LoginViewModel!
 
     
     // MARK: - Lifecycle
@@ -178,6 +182,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         makeLayoutSubviews()
+        setupBindings()
     }
     
     // MARK: - Functions
@@ -246,7 +251,12 @@ class ViewController: UIViewController {
     }
     
     private func setupBindings() {
+        let input = LoginViewModel.Input(toNextTrigger: loginButton.rx.tap.asDriver())
         
+        let output = viewModel.transform(input: input)
+        [
+            output.toVacancyVC.drive()
+        ].forEach({$0.disposed(by: disposeBag)})
     }
     
     

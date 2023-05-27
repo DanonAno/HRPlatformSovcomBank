@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Vacancy {
+struct VacancyModel {
     let title: String
     let company: String
     let tags: [String]

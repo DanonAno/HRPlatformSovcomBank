@@ -23,7 +23,22 @@ enum VacancyStatus: UInt {
     case searching = 0
     case interview = 1
     case newVacancy = 2
+    case closed = 3
+    
+    var context: String {
+        switch self {
+        case .searching:
+            return "Поиск"
+        case .interview:
+            return "Собеседования"
+        case .newVacancy:
+            return "Новый"
+        case .closed:
+            return ""
+        }
+    }
 }
+
 
 enum ApplyStatus: UInt {
     case reject = 0

@@ -15,21 +15,21 @@ class VacancyCell: UITableViewCell {
     private let vacancyTitleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 24)
-        label.textColor = .black
+        label.textColor = .primary500
         return label
     }()
     
     private let companyLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.textColor = .system900
         return label
     }()
     
     private let tagsLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .gray
+        label.textColor = .system600
         label.numberOfLines = 0
         return label
     }()
@@ -38,14 +38,17 @@ class VacancyCell: UITableViewCell {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 8
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.lightGray.cgColor
+        return view
+    }()
+    
+    private let statusView: VacancyStatusView = {
+        let view = VacancyStatusView()
         return view
     }()
     
     private let disposeBag = DisposeBag()
     
-    var viewModel: Vacancy? {
+    var viewModel: VacancyModel? {
         didSet {
             configureCell()
         }
@@ -65,6 +68,7 @@ class VacancyCell: UITableViewCell {
         containerView.addSubview(vacancyTitleLabel)
         containerView.addSubview(companyLabel)
         containerView.addSubview(tagsLabel)
+        containerView.addSubview(statusView)
         
         containerView.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(24)
@@ -88,8 +92,13 @@ class VacancyCell: UITableViewCell {
         tagsLabel.snp.makeConstraints { make in
             make.top.equalTo(companyLabel.snp.bottom).offset(24)
             make.left.equalToSuperview().offset(24)
-            make.bottom.equalToSuperview().offset(-24)
             make.right.equalToSuperview().offset(-24)
+        }
+        
+        statusView.snp.makeConstraints { make in
+            make.top.equalTo(tagsLabel.snp.bottom).offset(24)
+            make.left.equalToSuperview().offset(24)
+            make.bottom.equalToSuperview().offset(-24)
         }
     }
     
@@ -100,7 +109,8 @@ class VacancyCell: UITableViewCell {
         
         vacancyTitleLabel.text = viewModel.title
         companyLabel.text = viewModel.company
-        tagsLabel.text = viewModel.tags.joined(separator: ", ")
+        tagsLabel.text = viewModel.tags.joined(separator: " • ")
     }
 }
+
 

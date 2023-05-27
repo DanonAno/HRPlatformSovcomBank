@@ -9,21 +9,21 @@ import Foundation
 
 
 enum UserRole: UInt {
-    case applicant = 0
-    case recruiter = 1
-    case customer = 2
+    case applicant = 1
+    case recruiter = 2
+    case customer = 3
 }
 
 enum TestType: UInt {
-    case test = 0
-    case call = 1
+    case test = 1
+    case call = 2
 }
 
 enum VacancyStatus: UInt {
-    case searching = 0
-    case interview = 1
-    case newVacancy = 2
-    case closed = 3
+    case searching = 1
+    case interview = 2
+    case newVacancy = 3
+    case closed = 4
     
     var context: String {
         switch self {
@@ -41,14 +41,14 @@ enum VacancyStatus: UInt {
 
 
 enum ApplyStatus: UInt {
-    case reject = 0
-    case invite = 1
-    case wait = 2
+    case reject = 1
+    case invite = 2
+    case wait = 3
 }
 
 enum StageType: UInt {
-    case test = 0
-    case call = 1
+    case test = 1
+    case call = 2
 }
 
 enum Rating: UInt {

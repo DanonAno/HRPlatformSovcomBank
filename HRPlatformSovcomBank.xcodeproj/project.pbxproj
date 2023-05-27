@@ -41,6 +41,10 @@
 		A5F2F6A32A220D0E001A2623 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6A22A220D0E001A2623 /* MenuCell.swift */; };
 		A5F2F6A52A220D18001A2623 /* MenuCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6A42A220D18001A2623 /* MenuCellViewModel.swift */; };
 		A5F2F6A72A220D6D001A2623 /* CellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6A62A220D6D001A2623 /* CellType.swift */; };
+		A5F2F6A92A229872001A2623 /* AddResumeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6A82A229872001A2623 /* AddResumeViewModel.swift */; };
+		A5F2F6AB2A229EDC001A2623 /* FillProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6AA2A229EDC001A2623 /* FillProfileViewController.swift */; };
+		A5F2F6AE2A229F39001A2623 /* FillProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6AD2A229F39001A2623 /* FillProfileViewModel.swift */; };
+		A5F2F6B02A229FB1001A2623 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6AF2A229FB0001A2623 /* ProfileCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +84,10 @@
 		A5F2F6A22A220D0E001A2623 /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		A5F2F6A42A220D18001A2623 /* MenuCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCellViewModel.swift; sourceTree = "<group>"; };
 		A5F2F6A62A220D6D001A2623 /* CellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellType.swift; sourceTree = "<group>"; };
+		A5F2F6A82A229872001A2623 /* AddResumeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResumeViewModel.swift; sourceTree = "<group>"; };
+		A5F2F6AA2A229EDC001A2623 /* FillProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillProfileViewController.swift; sourceTree = "<group>"; };
+		A5F2F6AD2A229F39001A2623 /* FillProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillProfileViewModel.swift; sourceTree = "<group>"; };
+		A5F2F6AF2A229FB0001A2623 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.debug.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.debug.xcconfig"; sourceTree = "<group>"; };
 		DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.release.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +144,7 @@
 			children = (
 				A5F2F6632A1D4B8E001A2623 /* Application */,
 				A5F2F6752A1F9CEC001A2623 /* Controllers */,
+				A5F2F6AC2A229EFF001A2623 /* FillProfileVC */,
 				A5F2F69F2A220CEC001A2623 /* MenuVC */,
 				A5F2F6962A21FD29001A2623 /* NetworkService */,
 				A5F2F6842A210CDD001A2623 /* Navigation */,
@@ -252,6 +261,7 @@
 				A5F2F6902A21FB4C001A2623 /* ProfileViewModel.swift */,
 				A5F2F6922A21FB67001A2623 /* ResumeCell.swift */,
 				A5F2F6942A21FB7E001A2623 /* AddResumeCell.swift */,
+				A5F2F6A82A229872001A2623 /* AddResumeViewModel.swift */,
 			);
 			path = ProfileVC;
 			sourceTree = "<group>";
@@ -274,6 +284,16 @@
 				A5F2F6A42A220D18001A2623 /* MenuCellViewModel.swift */,
 			);
 			path = MenuVC;
+			sourceTree = "<group>";
+		};
+		A5F2F6AC2A229EFF001A2623 /* FillProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6AA2A229EDC001A2623 /* FillProfileViewController.swift */,
+				A5F2F6AD2A229F39001A2623 /* FillProfileViewModel.swift */,
+				A5F2F6AF2A229FB0001A2623 /* ProfileCell.swift */,
+			);
+			path = FillProfileVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,12 +435,16 @@
 				A5F2F6A52A220D18001A2623 /* MenuCellViewModel.swift in Sources */,
 				A5F2F6802A200501001A2623 /* VacancyModel.swift in Sources */,
 				A5F2F6882A212A14001A2623 /* VacancyTagModel.swift in Sources */,
+				A5F2F6A92A229872001A2623 /* AddResumeViewModel.swift in Sources */,
 				A5F2F66E2A1D4E27001A2623 /* WorkExperienceSectionModel.swift in Sources */,
 				A5F2F69E2A220CE0001A2623 /* MenuViewController.swift in Sources */,
 				A5F2F6832A2096F1001A2623 /* ViewModelProtocol.swift in Sources */,
+				A5F2F6AE2A229F39001A2623 /* FillProfileViewModel.swift in Sources */,
+				A5F2F6AB2A229EDC001A2623 /* FillProfileViewController.swift in Sources */,
 				A5F2F6522A1D1756001A2623 /* SceneDelegate.swift in Sources */,
 				A5F2F6782A1F9DBC001A2623 /* VacancyViewController.swift in Sources */,
 				A5F2F6732A1F9C96001A2623 /* LoginViewModel.swift in Sources */,
+				A5F2F6B02A229FB1001A2623 /* ProfileCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

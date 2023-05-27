@@ -19,15 +19,15 @@ enum CellType {
     var action: String {
         switch self {
         case .main:
-            return "main"
+            return "Главная"
         case .vacancies:
-            return "vacancies"
+            return "Вакансии"
         case .responses:
-            return "responses"
+            return "Отклики"
         case .profile:
-            return "profile"
+            return "Профиль"
         case .exit:
-            return "exit"
+            return "Выход"
         }
     }
     

@@ -49,6 +49,7 @@ class MenuCell: UITableViewCell {
         }
         menuLabel.snp.makeConstraints { make in
             make.left.equalTo(image.snp.right).offset(14)
+            make.centerY.equalToSuperview()
         }
         
     }

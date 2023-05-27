@@ -25,6 +25,5 @@ final class LoginNavigator: LoginNavigatorProtocol {
         titleLabel.font = UIFont.systemFont(ofSize: 32)
         titleLabel.sizeToFit()
         vc.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
-        
     }
 }

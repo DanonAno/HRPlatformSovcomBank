@@ -9,11 +9,6 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
-
-import UIKit
-import SnapKit
-import RxSwift
-import RxCocoa
 import RxDataSources
 
 class MenuViewController: UIViewController {
@@ -24,6 +19,7 @@ class MenuViewController: UIViewController {
         let tableView = UITableView()
         tableView.register(MenuCell.self, forCellReuseIdentifier: "MenuCell")
         tableView.tableFooterView = UIView()
+        tableView.separatorStyle = .none
         return tableView
     }()
     
@@ -31,6 +27,7 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         setupUI()
         bindTableView()
     }
@@ -38,8 +35,13 @@ class MenuViewController: UIViewController {
     private func setupUI() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(40)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-34)
         }
+        
+        tableView.rowHeight = 56 // Высота ячейки
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 32, right: 0)
     }
     
     private func bindTableView() {
@@ -57,15 +59,25 @@ class MenuViewController: UIViewController {
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
-        tableView.rx.modelSelected(CellType.self)
-            .subscribe(onNext: { item in
-                self.handleSelection(item)
+        tableView.rx.willDisplayCell
+            .subscribe(onNext: { cell, indexPath in
+                if indexPath.row == self.menuItems.count - 1 {
+                    cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: cell.bounds.size.width)
+                } else {
+                    cell.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                self.handleSelection(self.menuItems[indexPath.row])
+                self.tableView.deselectRow(at: indexPath, animated: true)
             })
             .disposed(by: disposeBag)
     }
     
     private func handleSelection(_ item: CellType) {
-        // Обработка выбора пункта меню
         switch item {
         case .main:
             print("Selected Main")

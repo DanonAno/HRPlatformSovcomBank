@@ -19,12 +19,20 @@ class VacancyViewController: UIViewController {
         return tableView
     }()
     
+    
     private let disposeBag = DisposeBag()
+    
+    let role: Int?
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         bindTableView()
+        
     }
     
     private func setupUI() {
@@ -35,35 +43,36 @@ class VacancyViewController: UIViewController {
     }
     
     private func bindTableView() {
-        let url = URL(string: "http://158.160.34.74:8080/api/vacancies/")!
+        let url = URL(string: "http://158.160.34.74:8080/api/vacancies")!
+        
+        let auth: HTTPHeaders = [
+            "Authorization":"12"
+        ]
         
         // Создаем источник данных для таблицы
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, VacancyModel>>(
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ResponseModel>>(
             configureCell: { (_, tableView, indexPath, item) -> UITableViewCell in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "VacancyCell", for: indexPath) as! VacancyCell
                 cell.viewModel = item
                 return cell
             }
         )
-        
-        AF.request(url).responseData { response in
+        var header: HTTPHeaders = [
+            "Authorization": "12"
+        ]
+        AF.request(url, headers: header).responseData { response in
             guard let data = response.data else { return }
             
             do {
-                print("OGOGOGO", data)
-                let vacancies = try JSONDecoder().decode([VacancyModel].self, from: data)
-                
-                // Создание секции данных для таблицы
-                let sections = [SectionModel(model: "", items: vacancies)]
-                
-                // Привязка данных к таблице
+                let responseModels = try JSONDecoder().decode([ResponseModel].self, from: data)
+                let sections = [SectionModel(model: "", items: responseModels)]
                 Observable.just(sections)
                     .bind(to: self.tableView.rx.items(dataSource: dataSource))
                     .disposed(by: self.disposeBag)
             } catch {
                 print("Error decoding JSON: \(error)")
             }
+            
         }
     }
 }
-

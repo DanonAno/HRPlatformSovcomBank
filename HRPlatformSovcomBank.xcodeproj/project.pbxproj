@@ -49,6 +49,9 @@
 		A5F2F6B52A2360C0001A2623 /* AppliesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6B42A2360C0001A2623 /* AppliesCell.swift */; };
 		A5F2F6B92A23612C001A2623 /* AppliesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6B82A23612C001A2623 /* AppliesViewModel.swift */; };
 		A5F2F6BC2A236317001A2623 /* NetworkAuthPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6BB2A236317001A2623 /* NetworkAuthPost.swift */; };
+		A5F2F6BF2A23AD22001A2623 /* VacancyByIdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6BE2A23AD22001A2623 /* VacancyByIdViewController.swift */; };
+		A5F2F6C12A23AD5E001A2623 /* VacancyByIdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6C02A23AD5E001A2623 /* VacancyByIdModel.swift */; };
+		A5F2F6C32A23B7B8001A2623 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F6C22A23B7B8001A2623 /* UserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +99,9 @@
 		A5F2F6B42A2360C0001A2623 /* AppliesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliesCell.swift; sourceTree = "<group>"; };
 		A5F2F6B82A23612C001A2623 /* AppliesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppliesViewModel.swift; sourceTree = "<group>"; };
 		A5F2F6BB2A236317001A2623 /* NetworkAuthPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkAuthPost.swift; sourceTree = "<group>"; };
+		A5F2F6BE2A23AD22001A2623 /* VacancyByIdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyByIdViewController.swift; sourceTree = "<group>"; };
+		A5F2F6C02A23AD5E001A2623 /* VacancyByIdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacancyByIdModel.swift; sourceTree = "<group>"; };
+		A5F2F6C22A23B7B8001A2623 /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		D42551B77C05ED2E93657F90 /* Pods-HRPlatformSovcomBank.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.debug.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.debug.xcconfig"; sourceTree = "<group>"; };
 		DC89DF28CF9A1846197E4B7B /* Pods-HRPlatformSovcomBank.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HRPlatformSovcomBank.release.xcconfig"; path = "Target Support Files/Pods-HRPlatformSovcomBank/Pods-HRPlatformSovcomBank.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				A5F2F6532A1D1756001A2623 /* LoginViewController.swift */,
+				A5F2F6C22A23B7B8001A2623 /* UserResponse.swift */,
 				A5F2F6722A1F9C96001A2623 /* LoginViewModel.swift */,
 			);
 			path = LoginVC;
@@ -228,6 +235,7 @@
 				A5F2F6AC2A229EFF001A2623 /* FillProfileVC */,
 				A5F2F68D2A21FB10001A2623 /* ProfileVC */,
 				A5F2F6762A1F9D98001A2623 /* VacancyVC */,
+				A5F2F6BD2A23ACF2001A2623 /* VacancyByID */,
 				A5F2F6742A1F9C9B001A2623 /* LoginVC */,
 			);
 			path = Controllers;
@@ -322,6 +330,15 @@
 				A5F2F6BB2A236317001A2623 /* NetworkAuthPost.swift */,
 			);
 			path = NetworkAuthPost;
+			sourceTree = "<group>";
+		};
+		A5F2F6BD2A23ACF2001A2623 /* VacancyByID */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F6BE2A23AD22001A2623 /* VacancyByIdViewController.swift */,
+				A5F2F6C02A23AD5E001A2623 /* VacancyByIdModel.swift */,
+			);
+			path = VacancyByID;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,9 +461,12 @@
 				A5F2F6A32A220D0E001A2623 /* MenuCell.swift in Sources */,
 				A5F2F67C2A1F9DD7001A2623 /* VacancyCell.swift in Sources */,
 				A5F2F6932A21FB67001A2623 /* ResumeCell.swift in Sources */,
+				A5F2F6BF2A23AD22001A2623 /* VacancyByIdViewController.swift in Sources */,
 				A5F2F68F2A21FB40001A2623 /* ProfileViewController.swift in Sources */,
 				A5F2F69A2A21FDBC001A2623 /* BaseNavigator.swift in Sources */,
 				A5F2F6712A1E78E1001A2623 /* Colors.swift in Sources */,
+				A5F2F6C12A23AD5E001A2623 /* VacancyByIdModel.swift in Sources */,
+				A5F2F6C32A23B7B8001A2623 /* UserResponse.swift in Sources */,
 				A5F2F69C2A220CCB001A2623 /* MenuNavigator.swift in Sources */,
 				A5F2F6982A21FD4F001A2623 /* NetworkProvider.swift in Sources */,
 				A5F2F6952A21FB7E001A2623 /* AddResumeCell.swift in Sources */,

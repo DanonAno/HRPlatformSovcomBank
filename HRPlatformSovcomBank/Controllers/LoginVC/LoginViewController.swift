@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import RxSwift
 import RxCocoa
+import Alamofire
 
 class ViewController: UIViewController {
     // MARK: - UIElements
@@ -22,26 +23,16 @@ class ViewController: UIViewController {
     
     let soglLabel: UILabel = {
         let label = UILabel()
-        
-        // Создаем атрибутированную строку с текстом и стилями
         let attributedText = NSMutableAttributedString(string: "Я даю согласие на обработку персональных данных и ознакомлен с политикой конфиденциальности")
-        
-        // Устанавливаем цвет и ссылку для обработки персональных данных
         let personalDataColor = UIColor.primary300
         let personalDataURL = URL(string: "https://www.google.com")!
         attributedText.addAttribute(.foregroundColor, value: personalDataColor, range: NSRange(location: 18, length: 29))
         attributedText.addAttribute(.link, value: personalDataURL, range: NSRange(location: 18, length: 29))
-        
-        // Устанавливаем цвет и ссылку для политики конфиденциальности
         let privacyPolicyColor = UIColor.primary300
         let privacyPolicyURL = URL(string: "https://www.yandex.com")!
         attributedText.addAttribute(.foregroundColor, value: privacyPolicyColor, range: NSRange(location: 62, length: 29))
         attributedText.addAttribute(.link, value: privacyPolicyURL, range: NSRange(location: 62, length: 29))
-        
-        // Устанавливаем атрибутированный текст для метки
         label.attributedText = attributedText
-        
-        // Добавляем возможность открывать ссылки
         label.isUserInteractionEnabled = true
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -170,23 +161,23 @@ class ViewController: UIViewController {
     
     @objc func checkBoxTapped() {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
-        // Add your code to handle checkbox state change here
+        loginButton.isEnabled = !checkBoxButton.isSelected
     }
     
     //MARK: Dependencies
     
     private let disposeBag = DisposeBag()
     var viewModel: LoginViewModel!
+    var userResponse: UserResponse? = nil
 
     
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.addTarget(self, action: #selector(saveTextFieldValue), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(sign), for: .touchUpInside)
         setupUI()
         makeLayoutSubviews()
-        setupBindings()
     }
     
     // MARK: - Functions
@@ -254,9 +245,32 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func saveTextFieldValue() {
-        emailString = phoneNumberTextField.text ?? "NoText"
-        passwordString = passwordTextField.text ?? "NoPassword"
+
+        @objc func sign() {
+            signIn(email: phoneNumberTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] userResponse in
+                guard let userResponse = userResponse else { return }
+            }
+            setupBindings()
+        }
+    
+    func signIn(email: String, password: String, completion: @escaping (UserResponse?) -> Void) {
+        print("AGA", email, password)
+        let parameters: [String: Any] = [
+            "email": email,
+            "password": password
+        ]
+        
+        let url = "http://158.160.34.74:8080/auth/signIn"
+        AF.request(url, method: .post, parameters: parameters)
+            .responseDecodable(of: UserResponse.self) { response in
+                switch response.result {
+                case .success(let userResponse):
+                    completion(userResponse)
+                case .failure(let error):
+                    print(error)
+                    completion(nil)
+                }
+            }
     }
     
     private func setupBindings() {

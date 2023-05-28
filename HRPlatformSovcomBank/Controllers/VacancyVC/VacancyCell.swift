@@ -48,7 +48,7 @@ class VacancyCell: UITableViewCell {
     
     private let disposeBag = DisposeBag()
     
-    var viewModel: VacancyModel? {
+    var viewModel: ResponseModel? {
         didSet {
             configureCell()
         }
@@ -57,6 +57,7 @@ class VacancyCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        selectionStyle = .none
     }
     
     required init?(coder aDecoder: NSCoder) {

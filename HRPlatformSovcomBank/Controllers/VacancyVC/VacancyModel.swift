@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VacancyModel: Decodable {
+struct ResponseModel: Decodable {
     let id: Int
     let createdAt: String
     let updatedAt: String
@@ -16,8 +16,17 @@ struct VacancyModel: Decodable {
     let company: String
     let description: String
     let templates: [TemplateModel]
-    let status: Int
-    let applies: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case createdAt = "CreatedAt"
+        case updatedAt = "UpdatedAt"
+        case deletedAt = "DeletedAt"
+        case title
+        case company
+        case description
+        case templates
+    }
 }
 
 struct TemplateModel: Decodable {
@@ -28,5 +37,13 @@ struct TemplateModel: Decodable {
     let vacancyId: Int
     let title: String
     let description: String
+    private enum CodingKeys: String, CodingKey {
+        case id = "ID"
+        case createdAt = "CreatedAt"
+        case updatedAt = "UpdatedAt"
+        case deletedAt = "DeletedAt"
+        case vacancyId
+        case title
+        case description
+    }
 }
-

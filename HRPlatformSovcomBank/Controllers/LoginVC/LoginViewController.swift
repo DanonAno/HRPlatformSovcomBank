@@ -51,6 +51,9 @@ class ViewController: UIViewController {
         return label
     }()
     
+    private var emailString: String = ""
+    private var passwordString: String = ""
+    
     let headImage = UIImageView(image: UIImage(named: "sovkomPeople")!)
     
     let userChoiceControl: UISegmentedControl = {
@@ -180,6 +183,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.addTarget(self, action: #selector(saveTextFieldValue), for: .touchUpInside)
         setupUI()
         makeLayoutSubviews()
         setupBindings()
@@ -250,15 +254,21 @@ class ViewController: UIViewController {
         }
     }
     
+    @objc func saveTextFieldValue() {
+        emailString = phoneNumberTextField.text ?? "NoText"
+        passwordString = passwordTextField.text ?? "NoPassword"
+    }
+    
     private func setupBindings() {
-        let input = LoginViewModel.Input(toNextTrigger: loginButton.rx.tap.asDriver())
+        let input = LoginViewModel.Input(email: emailString,
+                                         password: passwordString,
+                                         toNextTrigger: loginButton.rx.tap.asDriver())
+
         
         let output = viewModel.transform(input: input)
         [
             output.toVacancyVC.drive()
         ].forEach({$0.disposed(by: disposeBag)})
     }
-    
-    
 }
 

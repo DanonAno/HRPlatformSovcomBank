@@ -15,7 +15,7 @@ class ProfileFillViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    let viewModel = ProfileFillViewModel()
+    var viewModel = ProfileFillViewModel()
     
     let profileImageView: UIImageView = {
         let imageView = UIImageView()

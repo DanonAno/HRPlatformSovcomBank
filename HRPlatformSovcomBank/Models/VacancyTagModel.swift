@@ -5,7 +5,7 @@
 //  Created by  Даниил on 26.05.2023.
 //
 
-import Foundation
+import UIKit
 
 
 enum UserRole: UInt {
@@ -44,6 +44,17 @@ enum ApplyStatus: UInt {
     case reject = 1
     case invite = 2
     case wait = 3
+    
+    var viewColor: UIColor {
+        switch self {
+        case .reject:
+            return .secondary500
+        case .invite:
+            return UIColor.init(red: 124/225, green: 201/225, blue: 26/225, alpha: 1)
+        case .wait:
+            return UIColor.system300b
+        }
+    }
 }
 
 enum StageType: UInt {

@@ -10,6 +10,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import Alamofire
 
 class VacancyViewController: UIViewController {
     private let tableView: UITableView = {
@@ -34,12 +35,7 @@ class VacancyViewController: UIViewController {
     }
     
     private func bindTableView() {
-        // Пример данных
-        let vacancies: [VacancyModel] = [
-            VacancyModel(title: "Vacancy 1", company: "Company 1", tags: ["Tag 1", "Tag 2"]),
-            VacancyModel(title: "Vacancy 2", company: "Company 2", tags: ["Tag 3", "Tag 4"]),
-            VacancyModel(title: "Vacancy 3", company: "Company 3", tags: ["Tag 5", "Tag 6"])
-        ]
+        let url = URL(string: "http://158.160.34.74:8080/api/vacancies/")!
         
         // Создаем источник данных для таблицы
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, VacancyModel>>(
@@ -50,11 +46,24 @@ class VacancyViewController: UIViewController {
             }
         )
         
-        // Создаем секцию и привязываем данные к таблице
-        let sections = [SectionModel(model: "", items: vacancies)]
-        Observable.just(sections)
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
+        AF.request(url).responseData { response in
+            guard let data = response.data else { return }
+            
+            do {
+                print("OGOGOGO", data)
+                let vacancies = try JSONDecoder().decode([VacancyModel].self, from: data)
+                
+                // Создание секции данных для таблицы
+                let sections = [SectionModel(model: "", items: vacancies)]
+                
+                // Привязка данных к таблице
+                Observable.just(sections)
+                    .bind(to: self.tableView.rx.items(dataSource: dataSource))
+                    .disposed(by: self.disposeBag)
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }
     }
 }
 

@@ -10,7 +10,9 @@ import RxSwift
 
 protocol MenuNavigatorProtocol {
     func toProfile()
+    func toSettings()
 }
+
 
 final class MenuNavigator: MenuNavigatorProtocol {
     private let navigationController: UINavigationController
@@ -21,6 +23,17 @@ final class MenuNavigator: MenuNavigatorProtocol {
     
     func toProfile() {
         let vc = ProfileViewController()
+        guard (vc.jobInfoLabel.text != nil)  else {
+            let vc = ProfileFillViewController()
+            let viewModel = ProfileFillViewModel()
+            vc.viewModel = viewModel
+            navigationController.pushViewController(vc, animated: true)
+            return
+        }
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func toSettings() {
         
     }
     

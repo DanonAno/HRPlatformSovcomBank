@@ -9,12 +9,13 @@ import UIKit
 import SnapKit
 
 
-protocol BaseNavigatorProtocol {
+protocol BaseNavigatorProtocol: MenuNavigatorProtocol {
     func toStartVc()
     func toVacancy()
 }
 
 final class BaseNavigator: BaseNavigatorProtocol {
+    
     private let navigationController: UINavigationController
     private let services: NetworkProvider
     
@@ -29,6 +30,15 @@ final class BaseNavigator: BaseNavigatorProtocol {
         let viewModel = LoginViewModel(navigator: self)
         vc.viewModel = viewModel
         navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func toProfile() {
+        let vc = ProfileViewController()
+        navigationController.pushViewController(vc, animated: true)
+    }
+    
+    func toSettings() {
+        
     }
     
     func toVacancy() {
@@ -53,6 +63,9 @@ final class BaseNavigator: BaseNavigatorProtocol {
     
     func toMenu() {
         let vc = MenuViewController()
+        let menuNavigator = MenuNavigator(navigationController: navigationController)
+        let viewModel = MenuViewModel(navigator: menuNavigator)
+        vc.viewModel = viewModel
         let imageView = UIImageView(image: UIImage(named: "sovkomPeople"))
         imageView.contentMode = .scaleAspectFit
         

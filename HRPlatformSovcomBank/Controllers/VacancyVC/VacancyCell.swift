@@ -109,7 +109,7 @@ class VacancyCell: UITableViewCell {
         
         vacancyTitleLabel.text = viewModel.title
         companyLabel.text = viewModel.company
-        tagsLabel.text = viewModel.tags.joined(separator: " • ")
+        tagsLabel.text = viewModel.description
     }
 }
 

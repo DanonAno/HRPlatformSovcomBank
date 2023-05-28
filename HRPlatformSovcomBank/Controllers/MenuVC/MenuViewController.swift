@@ -23,6 +23,8 @@ class MenuViewController: UIViewController {
         return tableView
     }()
     
+    var viewModel: MenuViewModel!
+    
     let menuItems: [CellType] = [.main, .vacancies, .responses, .profile, .exit]
     
     override func viewDidLoad() {

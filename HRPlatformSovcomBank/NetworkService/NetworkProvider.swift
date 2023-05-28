@@ -10,7 +10,7 @@ import Foundation
 
 final class NetworkProvider {
     //MARK: - Api Endpoint
-    static let apiProvider = "TODO:URL"
+    static let apiProvider = "158.160.34.74:8080/"
     // Auth
     static let auth = "auth/signIn"
     static let signUp = "auth/signUp"

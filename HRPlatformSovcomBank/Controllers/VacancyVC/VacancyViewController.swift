@@ -22,11 +22,8 @@ class VacancyViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
-    let role: Int?
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var role: Int? = nil
+    var userID: Int? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,9 +42,6 @@ class VacancyViewController: UIViewController {
     private func bindTableView() {
         let url = URL(string: "http://158.160.34.74:8080/api/vacancies")!
         
-        let auth: HTTPHeaders = [
-            "Authorization":"12"
-        ]
         
         // Создаем источник данных для таблицы
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, ResponseModel>>(
@@ -58,13 +52,14 @@ class VacancyViewController: UIViewController {
             }
         )
         var header: HTTPHeaders = [
-            "Authorization": "12"
+            "Authorization": String(userID ?? 1)
         ]
         AF.request(url, headers: header).responseData { response in
             guard let data = response.data else { return }
             
             do {
                 let responseModels = try JSONDecoder().decode([ResponseModel].self, from: data)
+                print(responseModels)
                 let sections = [SectionModel(model: "", items: responseModels)]
                 Observable.just(sections)
                     .bind(to: self.tableView.rx.items(dataSource: dataSource))

@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct UserResponse: Codable {
-    let id: Int
-    let createdAt: String
-    let updatedAt: String
-    let deletedAt: String?
+struct UserResponse: Decodable {
+    let ID: Int
+    let CreatedAt: String
+    let UpdatedAt: String
+    let DeletedAt: String?
     let fullName: String
     let location: String
     let workMode: String
@@ -21,13 +21,14 @@ struct UserResponse: Codable {
     let phone: String
     let email: String
     let password: String
-    let cvs: [CVModel]?
+    let cvs: String?
+    let tests: String?
     
     private enum CodingKeys: String, CodingKey {
-        case id = "ID"
-        case createdAt = "CreatedAt"
-        case updatedAt = "UpdatedAt"
-        case deletedAt = "DeletedAt"
+        case ID
+        case CreatedAt
+        case UpdatedAt
+        case DeletedAt
         case fullName
         case location
         case workMode
@@ -38,17 +39,6 @@ struct UserResponse: Codable {
         case email
         case password
         case cvs
-    }
-}
-
-struct CVModel: Codable {
-    let id: Int
-    let title: String
-    let description: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case id = "ID"
-        case title
-        case description
+        case tests
     }
 }

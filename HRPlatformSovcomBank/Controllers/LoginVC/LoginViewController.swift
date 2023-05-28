@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     
     let soglLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .system600
         let attributedText = NSMutableAttributedString(string: "Я даю согласие на обработку персональных данных и ознакомлен с политикой конфиденциальности")
         let personalDataColor = UIColor.primary300
         let personalDataURL = URL(string: "https://www.google.com")!
@@ -82,8 +83,8 @@ class ViewController: UIViewController {
     
     let phoneNumberTextField: UITextField = {
         var textField = UITextField()
-        textField.placeholder = "Номер телефона"
-        textField.textColor = UIColor.system600
+        textField.placeholder = "Введите email"
+        textField.textColor = UIColor.gray
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
         textField.layer.cornerRadius = 8
         textField.layer.borderWidth = 1
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
         textField.isSecureTextEntry = true
         textField.textContentType = .oneTimeCode
         textField.placeholder = "Введите пароль"
-        textField.textColor = UIColor.system600
+        textField.textColor = UIColor.gray
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: textField.frame.height))
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.system300b.cgColor
@@ -132,6 +133,7 @@ class ViewController: UIViewController {
         button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 8
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        button.isEnabled = false
         button.layer.cornerRadius = 4
         return button
     }()
@@ -161,14 +163,14 @@ class ViewController: UIViewController {
     
     @objc func checkBoxTapped() {
         checkBoxButton.isSelected = !checkBoxButton.isSelected
-        loginButton.isEnabled = !checkBoxButton.isSelected
+        loginButton.isEnabled = checkBoxButton.isSelected
     }
     
     //MARK: Dependencies
     
     private let disposeBag = DisposeBag()
     var viewModel: LoginViewModel!
-    var userResponse: UserResponse? = nil
+    var userResponsed: UserResponse? = nil
 
     
     // MARK: - Lifecycle
@@ -249,33 +251,38 @@ class ViewController: UIViewController {
         @objc func sign() {
             signIn(email: phoneNumberTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] userResponse in
                 guard let userResponse = userResponse else { return }
+                self?.userResponsed = userResponse
+                self?.setupBindings()
             }
-            setupBindings()
         }
     
     func signIn(email: String, password: String, completion: @escaping (UserResponse?) -> Void) {
         print("AGA", email, password)
-        let parameters: [String: Any] = [
+        
+        let parameters: Parameters = [
             "email": email,
             "password": password
         ]
         
         let url = "http://158.160.34.74:8080/auth/signIn"
-        AF.request(url, method: .post, parameters: parameters)
+        
+        AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseDecodable(of: UserResponse.self) { response in
                 switch response.result {
                 case .success(let userResponse):
                     completion(userResponse)
                 case .failure(let error):
-                    print(error)
                     completion(nil)
                 }
             }
     }
+
     
     private func setupBindings() {
         let input = LoginViewModel.Input(email: emailString,
                                          password: passwordString,
+                                         userID: userResponsed?.ID ?? 2,
+                                         role: userResponsed?.role ?? 1,
                                          toNextTrigger: loginButton.rx.tap.asDriver())
 
         

@@ -20,10 +20,12 @@ class LoginViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let emailString = input.email
+        let role = input.role
+        let userId = input.userID
         let passwordString = input.password
         let toVacancy = input.toNextTrigger
             .do(onNext: {[unowned self] value in
-                navigator.toVacancy()
+                navigator.toVacancy(role, userId)
             })
                 
             return Output(toVacancyVC: toVacancy)
@@ -34,6 +36,8 @@ class LoginViewModel: ViewModelType {
         struct Input {
             let email: String
             let password: String
+            let userID: Int
+            let role: Int
             let toNextTrigger: Driver<Void>
         }
         

@@ -57,6 +57,9 @@ class VacancyCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
+        statusView.statusTitle.text = "Новый"
+        statusView.backgroundColor = .primary500
+        statusView.layer.cornerRadius = 20
         selectionStyle = .none
     }
     
@@ -100,6 +103,7 @@ class VacancyCell: UITableViewCell {
             make.top.equalTo(tagsLabel.snp.bottom).offset(24)
             make.left.equalToSuperview().offset(24)
             make.bottom.equalToSuperview().offset(-24)
+            make.height.equalTo(38)
         }
     }
     

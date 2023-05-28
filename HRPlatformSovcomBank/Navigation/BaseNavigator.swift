@@ -11,7 +11,7 @@ import SnapKit
 
 protocol BaseNavigatorProtocol: MenuNavigatorProtocol {
     func toStartVc()
-    func toVacancy()
+    func toVacancy(_ role: Int, _ userId: Int)
 }
 
 final class BaseNavigator: BaseNavigatorProtocol {
@@ -41,8 +41,10 @@ final class BaseNavigator: BaseNavigatorProtocol {
         
     }
     
-    func toVacancy() {
+    func toVacancy(_ role: Int, _ userId: Int) {
         let vc = VacancyViewController()
+        vc.role = role
+        vc.userID = userId
         let titleLabel = UILabel()
         titleLabel.text = "Вакансии"
         titleLabel.textColor = .primary500

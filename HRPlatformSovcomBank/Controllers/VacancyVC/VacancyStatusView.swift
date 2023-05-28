@@ -11,6 +11,7 @@ import SnapKit
 class VacancyStatusView: UIView {
     let statusTitle: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
@@ -23,7 +24,11 @@ class VacancyStatusView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        backgroundColor = .red
+        self.snp.makeConstraints { make in
+            make.height.equalTo(18)
+            make.width.equalTo(40)
+        }
         setupViews()
     }
     
